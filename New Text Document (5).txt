@@ -1,0 +1,297 @@
+$ git init
+
+$ git config --global user.name "Sayantan Chatterjee"
+
+$ git config --global user.email "sayantan.chatterjee@zensar.com"
+
+$ git config --edit --global
+
+$ code ReadFile.md
+
+$ git add .
+
+$ git commit -m "Add a new file named ReadFile.md"
+
+$ git status
+
+$ git log
+commit e4051712a960c2116aea266e81ebf0b10dea0e98 (HEAD -> master)
+Author: Sayantan Chatterjee <sayantan.chatterjee@zensar.com>
+Date:   Tue Jul 14 19:26:16 2020 +0530
+
+    Add a new file named ReadFile.md
+
+$ git log --oneline
+e405171 (HEAD -> master) Add a new file named ReadFile.md
+
+
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   ReadFile.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+$ git add .
+
+$ git commit -m "Make a small update in ReadFile.md"
+[master f0ec549] Make a small update in ReadFile.md
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+$ git reset HEAD~1
+Unstaged changes after reset:
+M       ReadFile.md
+
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   ReadFile.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Sayantan@DESKTOP-7G1OI2C MINGW64 /d/gitbash_Code/assignment_1_14_july (master)
+$ git add .
+
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   ReadFile.md
+
+Sayantan@DESKTOP-7G1OI2C MINGW64 /d/gitbash_Code/assignment_1_14_july (master)
+$ code authentication.txt
+
+Sayantan@DESKTOP-7G1OI2C MINGW64 /d/gitbash_Code/assignment_1_14_july (master)
+$ git add .
+
+Sayantan@DESKTOP-7G1OI2C MINGW64 /d/gitbash_Code/assignment_1_14_july (master)
+$ git commit -m "Add a text file named authetication.txt"
+[master a6f07b2] Add a text file named authetication.txt
+ 2 files changed, 4 insertions(+), 1 deletion(-)
+ create mode 100644 authentication.txt
+
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+$ git remote add origin https://github.com/Sayantan-Chatterjee/Assignme1.git
+$ git push -u origin master
+
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 6 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (7/7), 672 bytes | 672.00 KiB/s, done.
+Total 7 (delta 1), reused 0 (delta 0), pack-reused 0
+
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/Sayantan-Chatterjee/Assignme1.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+$ git checkout -b work
+Switched to a new branch 'work'
+
+$ git branch
+  master
+* work
+
+$ code Index.html
+
+Sayantan@DESKTOP-7G1OI2C MINGW64 /d/gitbash_Code/assignment_1_14_july (work)
+$ git add .
+
+Sayantan@DESKTOP-7G1OI2C MINGW64 /d/gitbash_Code/assignment_1_14_july (work)
+$ git commit -m "Add anew html file Index.html"
+[work 4710d09] Add anew html file Index.html
+ 1 file changed, 21 insertions(+)
+ create mode 100644 Index.html
+
+$ git status
+
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+$ git merge work
+Updating a6f07b2..4710d09
+Fast-forward
+ Index.html | 21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
+ create mode 100644 Index.html
+
+$ ls
+authentication.txt  Index.html  ReadFile.md
+
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+$  git push -u origin master
+
+$ git log
+
+$ git log --oneline
+4710d09 (HEAD -> master, origin/master, work) Add anew html file Index.html
+a6f07b2 Add a text file named authetication.txt
+e405171 Add a new file named ReadFile.md
+
+$ git diff 4710 a6f0
+diff --git a/Index.html b/Index.html
+deleted file mode 100644
+index 0542c3e..0000000
+--- a/Index.html
++++ /dev/null
+@@ -1,21 +0,0 @@
+-<html>
+-
+-<head>
+-    <title>An HTML PAge</title>
+-</head>
+-
+-<body>
+-    <p>
+-        <h1>Lists of Hobbies:</h1>
+-    </p>
+-
+-    <ul>
+-        <li>Football</li>
+-        <li>Music</li>
+-        <li>Cooking</li>
+-        <li>Gardening</li>
+-    </ul>
+-
+-    </table>
+-</body>
+-</html>
+\ No newline at end of file
+
+$ git commit -m "add a new line in txt file"
+[master 638f491] add a new line in txt file
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+$ git reset HEAD~1
+Unstaged changes after reset:
+M       authentication.txt
+
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   authentication.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+$ git log --oneline
+4710d09 (HEAD -> master, origin/master, work) Add anew html file Index.html
+a6f07b2 Add a text file named authetication.txt
+e405171 Add a new file named ReadFile.md
+
+$ git checkout -b practice
+Switched to a new branch 'practice'
+
+
+$ git commit -m "add a CSS file"
+[practice 531c326] add a CSS file
+ 2 files changed, 6 insertions(+), 1 deletion(-)
+ create mode 100644 index.css
+
+$ git status
+On branch practice
+nothing to commit, working tree clean
+
+$ git diff 4710 531c
+diff --git a/authentication.txt b/authentication.txt
+index 4103f67..34c85a2 100644
+--- a/authentication.txt
++++ b/authentication.txt
+@@ -1,2 +1,4 @@
+ UserName-->Georgeo Pesci
+-email-->pesci786@gmail.com
+\ No newline at end of file
++email-->pesci786@gmail.com
++
++I should be the authenticated one
+\ No newline at end of file
+diff --git a/index.css b/index.css
+new file mode 100644
+index 0000000..ff8777b
+--- /dev/null
++++ b/index.css
+@@ -0,0 +1,3 @@
++body{
++    background-color: royalblue;
++}
+\ No newline at end of file
+
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+$ ls
+authentication.txt  Index.html  ReadFile.md
+
+$ git merge practice
+Updating 4710d09..531c326
+Fast-forward
+ authentication.txt | 4 +++-
+ index.css          | 3 +++
+ 2 files changed, 6 insertions(+), 1 deletion(-)
+ create mode 100644 index.css
+
+$ ls
+authentication.txt  index.css  Index.html  ReadFile.md
+$ git log --oneline
+531c326 (HEAD -> master, practice) add a CSS file
+4710d09 (origin/master, work) Add anew html file Index.html
+a6f07b2 Add a text file named authetication.txt
+e405171 Add a new file named ReadFile.md
+
+$  git push -u origin master
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 6 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 493 bytes | 493.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Sayantan-Chatterjee/Assignme1.git
+   4710d09..531c326  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
